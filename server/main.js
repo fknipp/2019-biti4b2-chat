@@ -3,6 +3,11 @@ import Links from '/imports/api/links';
 
 import '/imports/api/server/publication';
 
+Accounts.config({
+  sendVerificationEmail: true,
+  forbidClientAccountCreation: false
+});
+
 function insertLink(title, url) {
   Links.insert({ title, url, createdAt: new Date() });
 }
